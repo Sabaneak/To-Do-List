@@ -30,8 +30,8 @@ class Tasks(Resource):
 
     @classmethod
     @jwt_required
-    def get(cls, _id):
-        task = TasksModel.find_by_id(_id)
+    def get(cls, name):
+        task = TasksModel.find_by_name(name)
         
         if task:
             return task_schema.dump(task), 200
@@ -40,14 +40,13 @@ class Tasks(Resource):
 
     @classmethod
     @jwt_required
-    def put(cls, _id):
-        task = TasksModel.find_by_id(_id)
+    def put(cls, name):
+        task = TasksModel.find_by_name(name)
         given_task = request.get_json()
         
         if not task:
             return {'msg': "No such task exists"}
         
-        task.name = given_task["name"]
         task.category = given_task["category"]
         task.status = given_task["status"]
 
@@ -60,8 +59,8 @@ class Tasks(Resource):
 
     @classmethod
     @fresh_jwt_required
-    def delete(cls, _id):
-        task = TasksModel.find_by_id(_id)
+    def delete(cls, name):
+        task = TasksModel.find_by_name(name)
         
         if task:
             task.delete_from_data()

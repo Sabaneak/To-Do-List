@@ -28,7 +28,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['PROPOGATE_EXCEPTIONS'] = True
 app.config['JWT_BLACKLIST_ENABLED'] = False
 app.config['JWT_BLACKLIST_TOKEN_CHECKS'] = ["access", "refresh"]
-app.secret_key = os.environ.get("APP_SECRET_KEY")
+app.secret_key = os.urandom(24)
 
 api = Api(app)
 jwt = JWTManager(app)
@@ -53,7 +53,7 @@ api.add_resource(TokenRefresh, '/refresh')
 api.add_resource(UserConfirm, '/user_confirm/<int:user_id>')
 
 api.add_resource(Input_Tasks, '/tasks')
-api.add_resource(Tasks, '/tasks/<int:_id>')
+api.add_resource(Tasks, '/tasks/<string:name>')
 api.add_resource(TasksList, '/tasks/all')
 
 
