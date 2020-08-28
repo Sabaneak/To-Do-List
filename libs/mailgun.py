@@ -3,8 +3,8 @@ from requests import post, Response
 from typing import List
 
 class MailGun:
-    MailGun_Domain = "sandboxd016a7154d0e4e368d89f8a4cf3a4487.mailgun.org"
-    MailGun_API_KEY = "f8e7fc734382548a69cc142d18086646-ed4dc7c4-ecb8dcb9"
+    MailGun_Domain = os.environ.get('MailGun_Domain')
+    MailGun_API_KEY = os.environ.get('MailGun_API_KEY')
     
     From_Title = "To-Do List REST API"
     From_Email = "no-reply@sandboxd016a7154d0e4e368d89f8a4cf3a4487.mailgun.org"
