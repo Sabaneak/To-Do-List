@@ -29,11 +29,11 @@ These are the simple features the API provides for user convenience:
    * __'/tasks/all'__  
 
 ## Softwares used
-The API was written using the Flask framework of Python. 
+The API was written using the __Flask__ framework of __Python__. 
 
-Mailing was performed with the help of MailGun.  
+Mailing was performed with the help of __MailGun__.  
 
-The API was tested with Postman.  
+The API was tested with __Postman__.  
 
 Some of the packages used include:  
 * flask  
