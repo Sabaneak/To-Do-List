@@ -12,24 +12,29 @@ These are the simple features the API provides for user convenience:
 7.__Displaying tasks__: Individual tasks can be displayed based on name, as well as comprehensive list of tasks with two seperate endpoints.  
 
 ## List of Endpoints:
-* __'/register'__  
-* __'/user/<int:user_id>'__  
-* __'/login'__  
-* __'/logout'__  
-* __'/refresh'__  
-* __'/user_confirm/<int:user_id>'__  
+ 1. Users Endpoints  
+   * __'/register'__  
+   * __'/user/<int:user_id>'__  
+   * __'/login'__  
+   * __'/logout'__  
+   * __'/refresh'__  
+   * __'/user_confirm/<int:user_id>'__  
 
-* __'/tasks'__  
-* __'/tasks/<string:name>'__   
-    * Add  
-    * Edit  
-    * Delete  
-* __'/tasks/all'__  
+  2. Tasks Enpoints 
+   * __'/tasks'__  
+   * __'/tasks/<string:name>'__   
+       * Add  
+       * Edit  
+       * Delete  
+   * __'/tasks/all'__  
 
 ## Softwares used
-The API was written using the Flask framework of Python.  
+The API was written using the Flask framework of Python. 
+
 Mailing was performed with the help of MailGun.  
+
 The API was tested with Postman.  
+
 Some of the packages used include:  
 * flask  
 * requests  
